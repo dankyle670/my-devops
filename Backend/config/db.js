@@ -8,6 +8,10 @@ const db = knex({
     password: 'HKdfnbb6-op',
     database: 'todo_db',  
     charset: 'utf8mb4' 
+  },
+  pool: {
+    min: 2, 
+    max: 10 
   }
 });
 
@@ -19,9 +23,6 @@ async function testConnection() {
     console.log('Résultat du test :', result[0][0]);
   } catch (error) {
     console.error('Erreur de connexion à la base de données :', error);
-  } finally {
-  
-    await db.destroy();
   }
 }
 

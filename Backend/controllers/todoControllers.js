@@ -2,14 +2,15 @@ const todoModel = require('../models/Todo');
 
 
 async function createTodo(req, res) {
-  const { title, description } = req.body;
+  console.log('Données reçues:', req.body);
+  const { titre, description } = req.body;
   
-  if (!title || !description) {
+  if (!titre || !description) {
     return res.status(400).json({ error: 'Le titre et la description sont obligatoires' });
   }
 
   try {
-    const newTodo = await todoModel.addTodo(title, description);
+    const newTodo = await todoModel.addTodo(titre, description);
     res.status(201).json(newTodo); // Répond avec la tâche créée
   } catch (error) {
     res.status(500).json({ error: 'Erreur lors de la création de la tâche' });
