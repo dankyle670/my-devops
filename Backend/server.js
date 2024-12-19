@@ -1,7 +1,7 @@
 const http = require('http');
 const app = require('./app');
 
-app.set('port', 5000);
+app.set('port', 3000);
 const server = http.createServer(app);
 
-server.listen( 5000);
+server.listen(3000);
