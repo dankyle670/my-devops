@@ -6,10 +6,10 @@ async function createTable() {
 
     if (!exists) {
       await db.schema.createTable('todos', (table) => {
-        table.increments('id').primary(); // Crée un champ "id" qui s'auto-incrémente
-        table.string('titre').notNullable().unique(); // Crée un champ "titre" qui ne peut pas être nul et doit être unique
-        table.string('description').notNullable(); // Crée un champ "description" qui ne peut pas être nul
-        table.boolean('completed').defaultTo(false); // Crée un champ "completed" avec valeur par défaut false
+        table.increments('id').primary(); 
+        table.string('titre').notNullable().unique(); 
+        table.string('description').notNullable(); 
+        table.boolean('completed').defaultTo(false); 
       });
       console.log('Table "todos" créée avec succès!');
     } else {
