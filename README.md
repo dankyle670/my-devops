@@ -1,4 +1,4 @@
-mets le titre et sous titre partout sur le projet et rend le beau : # **My DevOps Project**
+Mets le titre et sous titre partout sur le projet et rend le beau : # **My DevOps Project**
 
 Ce projet est une application **TODO List** avec une architecture moderne utilisant Docker pour le développement et le déploiement. L'application permet de gérer des tâches avec une interface intuitive et une gestion centralisée des données.
 
