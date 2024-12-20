@@ -89,8 +89,8 @@ bash
 
 
 2. L'application sera disponible :
-   - **Frontend** : [http://localhost:3000](http://localhost:3000)  
-   - **Backend** : [http://localhost:5000](http://localhost:5000)
+   - **Frontend** : [http://localhost:8080](http://localhost:8080)  
+   - **Backend** : [http://localhost:3000](http://localhost:3000)
 
 3. Pour arrêter les conteneurs :
    
