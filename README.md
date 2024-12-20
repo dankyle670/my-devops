@@ -1,4 +1,4 @@
-mets le titre et sous titre partout sur le projet et rend le beau : # **My DevOps Project**
+**Le DevOps Project**
 
 Ce projet est une application **TODO List** avec une architecture moderne utilisant Docker pour le développement et le déploiement. L'application permet de gérer des tâches avec une interface intuitive et une gestion centralisée des données.
 
@@ -26,6 +26,15 @@ Ce projet est une application **TODO List** avec une architecture moderne utilis
 
 ---
 
+## **Les différents repo**
+
+dankyle6700/my-devops-backend:tagname
+dankyle6700/my-devops-frontend:tagname
+https://github.com/dankyle670/my-devops.git
+
+---
+
+
 ## **Prérequis**
 
 Avant de commencer, assurez-vous d'avoir les outils suivants installés sur votre système :
@@ -48,6 +57,7 @@ bash
 2. Assurez-vous que vous êtes dans le répertoire du projet avant de continuer.
 
 ---
+
 
 ## **Configuration de la base de données MySQL**
 
