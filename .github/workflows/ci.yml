@@ -14,9 +14,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Debug Secrets
+      - name: Debug Secrets
+        run: |
+          echo "DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}"
+          echo "DOCKER_TOKEN is set: ${{ secrets.DOCKER_TOKEN != '' }}"
+
       # Log in to DockerHub using Docker Token
       - name: Log in to Docker Registry
-        run: echo "${{ secrets.DOCKER_TOKEN }}" | docker login docker.io -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+        run: |
+          echo "${{ secrets.DOCKER_TOKEN }}" | docker login docker.io -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       # Build the Docker image for frontend
       - name: Build Frontend Image
