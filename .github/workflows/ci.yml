@@ -14,27 +14,26 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Log in to DockerHub using hard-coded credentials
-      - name: Log in to Docker Registry
-        run: |
-          echo "dckr_pat_mSf0MXNmZpftpoarw68UFqsrO_8" | docker login docker.io -u "dankyle6700" --password-stdin
+      # Log in to DockerHub using GitHub Secrets
+      - name: Log in to DockerHub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login docker.io -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       # Build the Docker image for frontend
       - name: Build Frontend Image
         run: |
-          docker build -t my-dockerhub-username/my-devops-frontend:latest ./front-end
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/my-devops-frontend:latest ./front-end
 
       # Push the frontend image to DockerHub
       - name: Push Frontend Image
         run: |
-          docker push my-dockerhub-username/my-devops-frontend:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/my-devops-frontend:latest
 
       # Build the Docker image for backend
       - name: Build Backend Image
         run: |
-          docker build -t my-dockerhub-username/my-devops-backend:latest ./Backend
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/my-devops-backend:latest ./Backend
 
       # Push the backend image to DockerHub
       - name: Push Backend Image
         run: |
-          docker push my-dockerhub-username/my-devops-backend:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/my-devops-backend:latest
